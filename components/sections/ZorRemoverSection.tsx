@@ -1,0 +1,93 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Crown, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+
+const BEFORE_IMAGE =
+  'https://images.pexels.com/photos/24389353/pexels-photo-24389353.jpeg?auto=compress&cs=tinysrgb&w=900';
+
+const AFTER_IMAGE =
+  'https://images.pexels.com/photos/29208822/pexels-photo-29208822.jpeg?auto=compress&cs=tinysrgb&w=900';
+
+export default function ZorRemoverSection() {
+  return (
+    <section className="w-full px-4 sm:px-6 lg:px-8 py-10">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-6xl mx-auto rounded-3xl bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 border border-amber-100 overflow-hidden"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 sm:p-10 lg:p-12">
+
+          {/* LEFT */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-amber-300 bg-white/80 text-amber-700 text-xs font-semibold mb-5">
+              <Crown className="w-3.5 h-3.5" />
+              Zor Remover
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+              Zor Remover
+            </h2>
+
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6 max-w-lg">
+              Remove image background 100% automatically and completely free.
+            </p>
+
+            <Link
+              href="/zor-remover"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition-all group mb-6"
+            >
+              Try Zor Remover
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+
+            <p className="text-slate-500 text-sm">
+              Unlimited free images • HD download included
+            </p>
+          </div>
+
+          {/* RIGHT - FIXED BEFORE / AFTER FRAME */}
+          <div className="w-full">
+            <div className="w-full max-w-[520px] mx-auto rounded-2xl overflow-hidden shadow-xl bg-white">
+
+              <div className="grid grid-cols-2 gap-[2px] bg-white">
+
+                {/* BEFORE */}
+                <div className="relative h-[300px] sm:h-[340px] overflow-hidden bg-slate-100">
+                  <img
+                    src={BEFORE_IMAGE}
+                    alt="Before background removal"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                  />
+
+                  <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-black/60 text-white text-[10px] font-bold uppercase tracking-wide">
+                    Before
+                  </span>
+                </div>
+
+                {/* AFTER */}
+                <div className="relative h-[300px] sm:h-[340px] overflow-hidden bg-slate-100">
+                  <img
+                    src={AFTER_IMAGE}
+                    alt="After background removal"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                  />
+
+                  <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-green-500 text-white text-[10px] font-bold uppercase tracking-wide">
+                    After
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </motion.div>
+    </section>
+  );
+}

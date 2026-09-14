@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Loader2, CheckCircle2, ArrowLeft } from 'lucide-react';
+import { Mail, MapPin, Loader2, CheckCircle2, ArrowLeft } from 'lucide-react';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 
@@ -11,6 +11,11 @@ const contactInfo = [
     icon: Mail,
     title: 'Email Us',
     detail: 'support@zorpdf.com',
+  },
+  {
+    icon: MapPin,
+    title: 'Based In',
+    detail: 'Lucknow, India',
   },
 ];
 

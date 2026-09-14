@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ChevronDown, Grid2X2, Mail, Moon, Search, Shield, Star, Sun, Wrench, Zap, Home as HomeIcon, FileText } from 'lucide-react';
+import { ChevronDown, Grid2X2, Mail, Moon, Search, Shield, Star, Sun, Wrench, Zap, Home as HomeIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/authContext';
@@ -11,8 +11,7 @@ const navLinks = [
   { label: 'Tools', href: '/#tools', icon: Grid2X2 },
   { label: 'Features', href: '/#features', icon: Star },
   { label: 'Zor Remover', href: '/zor-remover', icon: Wrench, badge: 'FREE' },
-  { label: 'Blog', href: '/#blog', icon: FileText },
-  { label: 'Contact', href: '/#contact', icon: Mail },
+  { label: 'Contact', href: '/contact', icon: Mail },
 ];
 
 export default function Navbar() {

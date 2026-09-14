@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, MapPin, Loader2, CheckCircle2, ArrowLeft } from 'lucide-react';
+import { Mail, Loader2, CheckCircle2, ArrowLeft } from 'lucide-react';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 
@@ -11,16 +11,6 @@ const contactInfo = [
     icon: Mail,
     title: 'Email Us',
     detail: 'support@zorpdf.com',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Live Chat',
-    detail: 'Mon–Fri, 9am–6pm',
-  },
-  {
-    icon: MapPin,
-    title: 'Based In',
-    detail: 'Lucknow, India',
   },
 ];
 
@@ -81,7 +71,7 @@ export default function ContactPage() {
               </div>
 
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-medium mb-6">
-                <MessageCircle className="w-3.5 h-3.5" />
+                <Mail className="w-3.5 h-3.5" />
                 Get in Touch
               </div>
 
